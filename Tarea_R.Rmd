@@ -1,0 +1,67 @@
+---
+title: "IntroduccionR"
+author: "Andrés Arias"
+date: "26/2/2022"
+output:
+  html_document:
+    mathjax: local
+    self_contained: false
+    fig_height: 6
+    fig_width: 8
+    theme: journal
+    highlight: zenburn
+    toc: yes
+    toc_depth: 3
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+---
+
+
+# 1. Crear un identificador de nombre "ciudad" y asigne como valor el nombre de alguna ciudad
+
+```{r}
+
+"Ciudad" -> Cuenca
+
+```
+
+
+# 2. Crear un identificador de nombre "pais_andes" y asigne como valor los nombres de los países por donde cruza la cordillera de Los Andes
+
+```{r}
+Paises_Andes <- c("Venezuela", "Argentina", "Colombia", "Ecuador", "Peru", "Bolibia", "Chile")
+print (Paises_Andes)
+
+```
+
+
+# 3. Crear un dataframe con 12 eventos (filas) y 5 variables (columnas),cada columna debe tener diferentes tipos de datos (entero, decimal, caracter, logico)
+
+```{r}
+
+## Los datos para crear el **dataframe** se obtubieron de la página: [weatherspark.com](https://es.weatherspark.com/y/20631/Clima-promedio-en-Tena-Ecuador-durante-todo-el-año)
+
+Mes <- c("Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic")
+Temp_max_C <- c(31, 31, 30, 30, 29, 29, 29, 29, 30, 31, 31, 31)
+Temp_min_C <- c(23, 23, 23, 23, 23, 22, 22, 22, 22, 23, 23, 23)
+Temp_prom_C <- c(26, 26, 26, 26, 26, 25, 25, 25, 26, 26, 26, 26)
+Lluvia_mm <- c(108.9, 129.9, 151.1, 179.4, 157.5, 135.6, 97.8, 82.5, 104.3, 139.6, 136.9, 126.1)
+Temperatura_y_mm_de_lluvia_TENA <- data.frame(Mes, Temp_max_C, Temp_min_C, Temp_prom_C, Lluvia_mm)
+
+Temperatura_y_mm_de_lluvia_TENA
+```
+
+
+
+# 4. Cargue el dataset "DNase" e identifique su estructura. Extraiga (subset) los datos que cumplan con las condiciones de: 
+## 1. "conc" (concentracion) entre 0.1 y 0.2 
+## 2. "Run" diferente a 2, "conc" mayor a 0.2 y "density" menor o igual a 1.0
+
+```{r}
+?DNase
+Dataset_Run_conc_density = subset(DNase, Run != 2 & conc > 0.2 & density <= 1.0)
+
+print(Dataset_Run_conc_density)
+```
+
