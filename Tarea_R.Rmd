@@ -4,8 +4,8 @@ author: "Andrés Arias"
 date: "26/2/2022"
 output:
   html_document:
-    mathjax: local
-    self_contained: false
+    mathjax: "http://example.com/MathJax.js"
+    self_contained: true
     fig_height: 6
     fig_width: 8
     theme: journal
@@ -29,18 +29,19 @@ output:
 
 # 2. Crear un identificador de nombre "pais_andes" y asigne como valor los nombres de los países por donde cruza la cordillera de Los Andes
 
+### Los datos se recogieron de la página: [UNCOMO](https://www.mundodeportivo.com/uncomo/educacion/articulo/que-paises-atraviesan-los-andes-43156.html)
+
 ```{r}
-Paises_Andes <- c("Venezuela", "Argentina", "Colombia", "Ecuador", "Peru", "Bolibia", "Chile")
-print (Paises_Andes)
+Pais_Andes <- c("Venezuela", "Argentina", "Colombia", "Ecuador", "Perú", "Bolivia", "Chile")
+print (Pais_Andes)
 
 ```
 
 
 # 3. Crear un dataframe con 12 eventos (filas) y 5 variables (columnas),cada columna debe tener diferentes tipos de datos (entero, decimal, caracter, logico)
 
+### Los datos para crear el **dataframe** se obtubieron de la página: [weatherspark.com](https://es.weatherspark.com/y/20631/Clima-promedio-en-Tena-Ecuador-durante-todo-el-año)
 ```{r}
-
-## Los datos para crear el **dataframe** se obtubieron de la página: [weatherspark.com](https://es.weatherspark.com/y/20631/Clima-promedio-en-Tena-Ecuador-durante-todo-el-año)
 
 Mes <- c("Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic")
 Temp_max_C <- c(31, 31, 30, 30, 29, 29, 29, 29, 30, 31, 31, 31)
